@@ -20,6 +20,17 @@ export default class ContingencyTable {
     --this.table[i][j];
   }
 
+  compute2dArray() {
+    let array = [];
+    for (let i = 0; i < this.table.length; ++i) {
+      for (let j = 0; j < this.table[0].length; ++j) {
+        for (let amount = 0; amount < this.table[i][j]; ++amount) {
+          array.push([i, j]);
+        }
+      }
+    }
+  }
+
   computeRowSums() {
     let rowSums = [];
     for (let i = 0; i < this.table.length; ++i) {

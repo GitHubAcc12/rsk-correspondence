@@ -13,7 +13,7 @@ export default class Application {
     let i = index[0];
     let j = index[1];
     this.contingencyTable.increment(i, j);
-    this.contingencyTable.printTable();
+    // this.contingencyTable.printTable();
   }
 
   decrementCell(cell, index) {

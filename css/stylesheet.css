@@ -2,16 +2,15 @@ html,
 body {
   text-align: center;
   background: #424242;
+  color: cornsilk;
 }
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  color: cornsilk;
 }
 
 .description {
   font-family: Arial, Helvetica, sans-serif;
-  color: cornsilk;
 }
 
 .bottom-padding {
@@ -20,14 +19,13 @@ h1 {
 
 .matrix {
   font-family: Arial, Helvetica, sans-serif;
-  color: cornsilk;
   margin: auto;
 }
 
 td {
   font-size: xx-large;
   padding: 20px;
-  border: 1px solid gray;
+  border: 1px solid cornsilk;
 }
 
 .left {
@@ -40,4 +38,14 @@ td {
   width: 50%;
   float: right;
   text-align: center;
+}
+
+.content {
+  overflow: auto;
+  position: relative;
+}
+
+.button-wrapper {
+  padding: 5px;
+  position: relative;
 }

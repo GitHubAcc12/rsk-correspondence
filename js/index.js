@@ -1,4 +1,4 @@
 import Application from "./application";
-import YoungTableu from "./tableau";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 let app = new Application();
