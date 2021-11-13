@@ -12,6 +12,9 @@ h1 {
 .description {
   font-family: Arial, Helvetica, sans-serif;
   color: cornsilk;
+}
+
+.bottom-padding {
   padding-bottom: 5%;
 }
 
@@ -25,4 +28,16 @@ td {
   font-size: xx-large;
   padding: 20px;
   border: 1px solid gray;
+}
+
+.left {
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+.right {
+  width: 50%;
+  float: right;
+  text-align: center;
 }

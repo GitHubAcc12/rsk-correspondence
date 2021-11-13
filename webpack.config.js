@@ -1,6 +1,5 @@
-var webpack = require("webpack");
-
 module.exports = {
+  mode: "development",
   entry: {
     entry: "./js/index.js",
   },
