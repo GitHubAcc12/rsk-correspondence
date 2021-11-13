@@ -29,6 +29,11 @@ export default class ContingencyTable {
         }
       }
     }
+    array.sort((a, b) => a[0] - b[0]);
+
+    // don't know if this is the most useful shape
+
+    return array;
   }
 
   computeRowSums() {

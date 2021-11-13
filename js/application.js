@@ -45,5 +45,10 @@ export default class Application {
         this.decrementCell(items[i], index);
       });
     }
+
+    let btn = document.getElementById("rsk-button");
+    btn.addEventListener("click", () => {
+      console.log(this.contingencyTable.compute2dArray());
+    });
   }
 }
