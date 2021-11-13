@@ -51,6 +51,33 @@ export default class Application {
       let [P, Q] = this.contingencyTable.semistandardTableauxFromCT();
       console.log(P);
       console.log(Q);
+
+      let headers = document.getElementsByClassName("vis-when-rsk");
+      for (let i = 0; i < headers.length; ++i) {
+        headers[i].style.visibility = "visible";
+      }
+
+      let tableP = document.getElementById("tableauP");
+      let tableQ = document.getElementById("tableauQ");
+
+      tableP.innerHTML = "";
+      tableQ.innerHTML = "";
+
+      for (let i = 0; i < P.tableau.length; ++i) {
+        let trP = document.createElement("tr");
+        let trQ = document.createElement("tr");
+        for (let j = 0; j < P.tableau[i].length; ++j) {
+          let tdP = document.createElement("td");
+          tdP.innerHTML = P.tableau[i][j];
+          trP.appendChild(tdP);
+
+          let tdQ = document.createElement("td");
+          tdQ.innerHTML = Q.tableau[i][j];
+          trQ.appendChild(tdQ);
+        }
+        tableP.appendChild(trP);
+        tableQ.appendChild(trQ);
+      }
     });
   }
 }
