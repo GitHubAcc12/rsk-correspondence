@@ -1,0 +1,1 @@
+(()=>{function e(e){let n=parseInt(e.innerHTML);e.innerHTML=n+1}function n(e){let n=parseInt(e.innerHTML);n>0?e.innerHTML=n-1:console.warn("Only positive integers allowed!")}!function(){let t=document.getElementsByTagName("td");for(let i=0;i<t.length;++i)t[i].addEventListener("click",(()=>e(t[i]))),t[i].addEventListener("contextmenu",(e=>{e.preventDefault(),n(t[i])}))}()})();

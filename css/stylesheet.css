@@ -1,0 +1,28 @@
+html,
+body {
+  text-align: center;
+  background: #424242;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornsilk;
+}
+
+.description {
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornsilk;
+  padding-bottom: 5%;
+}
+
+.matrix {
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornsilk;
+  margin: auto;
+}
+
+td {
+  font-size: xx-large;
+  padding: 20px;
+  border: 1px solid gray;
+}
