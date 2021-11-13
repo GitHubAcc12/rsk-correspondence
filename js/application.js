@@ -48,7 +48,9 @@ export default class Application {
 
     let btn = document.getElementById("rsk-button");
     btn.addEventListener("click", () => {
-      console.log(this.contingencyTable.compute2dArray());
+      let [P, Q] = this.contingencyTable.semistandardTableauxFromCT();
+      console.log(P);
+      console.log(Q);
     });
   }
 }
