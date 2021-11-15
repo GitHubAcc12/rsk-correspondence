@@ -16,23 +16,31 @@
       <div class="content">
         <div class="left">
           <h3 class="description">Contingency Table</h3>
-          <table class="matrix">
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>0</td>
-              <td>0</td>
-              <td>0</td>
-            </tr>
-          </table>
+          <div class="wrapper">
+            <div id="matrix-wrapper">
+              <table class="matrix">
+                <tr>
+                  <td class="ct">0</td>
+                  <td class="ct">0</td>
+                  <td class="ct">0</td>
+                </tr>
+                <tr>
+                  <td class="ct">0</td>
+                  <td class="ct">0</td>
+                  <td class="ct">0</td>
+                </tr>
+                <tr>
+                  <td class="ct">0</td>
+                  <td class="ct">0</td>
+                  <td class="ct">0</td>
+                </tr>
+              </table>
+            </div>
+            <div class="button-wrapper">
+              <a id="btn-add-row" class="custom-btn">Add Row</a>
+              <a id="btn-add-col" class="custom-btn">Add Col</a>
+            </div>
+          </div>
         </div>
         <div class="right description">
           <h3 class="vis-when-rsk">Tableau P:</h3>

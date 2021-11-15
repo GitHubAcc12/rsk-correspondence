@@ -64,8 +64,8 @@ export default class Application {
     }
   }
 
-  initializeEventListeners() {
-    let items = document.getElementsByTagName("td");
+  addTableIncrementListeners() {
+    let items = document.getElementsByClassName("ct");
     for (let i = 0; i < items.length; ++i) {
       // compute row and column number from i
       let cols = this.contingencyTable.columns;
@@ -83,10 +83,33 @@ export default class Application {
         // this.computeRSK();
       });
     }
+  }
 
+  initializeEventListeners() {
+    this.addTableIncrementListeners();
     let btn = document.getElementById("rsk-button");
     btn.addEventListener("click", () => {
       this.computeRSK();
+    });
+
+    let btnAddRow = document.getElementById("btn-add-row");
+    btnAddRow.addEventListener("click", () => {
+      this.contingencyTable.addRow();
+      const newTable = this.contingencyTable.toHtml();
+      let parentDiv = document.getElementById("matrix-wrapper");
+      parentDiv.innerHTML = "";
+      parentDiv.appendChild(newTable);
+      this.addTableIncrementListeners();
+    });
+
+    let btnAddCol = document.getElementById("btn-add-col");
+    btnAddCol.addEventListener("click", () => {
+      this.contingencyTable.addColumn();
+      const newTable = this.contingencyTable.toHtml();
+      let parentDiv = document.getElementById("matrix-wrapper");
+      parentDiv.innerHTML = "";
+      parentDiv.appendChild(newTable);
+      this.addTableIncrementListeners();
     });
   }
 }

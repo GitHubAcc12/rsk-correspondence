@@ -19,6 +19,10 @@ h1 {
   padding-bottom: 5%;
 }
 
+.invis-row {
+  visibility: hidden;
+}
+
 .vis-when-rsk {
   visibility: hidden;
 }
@@ -51,15 +55,23 @@ td {
   background: #424242;
 }
 
+.addRow,
+.addCol {
+  border: 1px solid cornsilk;
+  margin: 10px;
+}
+
 .left {
-  width: 50%;
+  width: 49%;
   float: left;
+  height: 100%;
   text-align: center;
   background: #424242;
 }
 
 .right {
-  width: 50%;
+  width: 49%;
+  height: 100%;
   float: right;
   text-align: center;
   background: #424242;
@@ -70,4 +82,11 @@ td {
   background: #424242;
   position: relative;
   height: 100%;
+}
+
+.button-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }

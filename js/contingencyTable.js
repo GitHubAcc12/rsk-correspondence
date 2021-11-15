@@ -2,12 +2,58 @@ import YoungTableu from "./tableau";
 
 export default class ContingencyTable {
   constructor(n, m) {
-    this.table = [];
-    for (let i = 0; i < n; ++i) {
-      this.table.push(Array.from({ length: m }, () => 0));
-    }
+    this.table = this.createNbyM(n, m, true);
+
     this.rows = n;
     this.columns = m;
+  }
+
+  createNbyM(n, m, clear = false) {
+    let table = [];
+    for (let i = 0; i < n; ++i) {
+      table.push(Array.from({ length: m }, () => 0));
+    }
+
+    // refill with old values
+    if (!clear) {
+      for (let i = 0; i < this.table.length; ++i) {
+        for (let j = 0; j < this.table[0].length; ++j) {
+          table[i][j] = this.table[i][j];
+        }
+      }
+    }
+
+    return table;
+  }
+
+  addRow() {
+    this.table = this.createNbyM(this.rows + 1, this.columns);
+    ++this.rows;
+  }
+
+  addColumn() {
+    this.table = this.createNbyM(this.rows, this.columns + 1);
+    ++this.columns;
+  }
+
+  toHtml() {
+    let table = document.createElement("table");
+    table.classList.add("matrix");
+
+    const columns = this.table[0].length;
+    const rows = this.table.length;
+    for (let i = 0; i < rows; ++i) {
+      let tr = document.createElement("tr");
+
+      for (let j = 0; j < columns; ++j) {
+        let td = document.createElement("td");
+        td.classList.add("ct");
+        td.innerHTML = this.table[i][j];
+        tr.appendChild(td);
+      }
+      table.appendChild(tr);
+    }
+    return table;
   }
 
   printTable() {
