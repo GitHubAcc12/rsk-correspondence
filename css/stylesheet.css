@@ -65,4 +65,5 @@ td {
   overflow: auto;
   background: #424242;
   position: relative;
+  height: 100%;
 }

@@ -27,8 +27,8 @@ export default class YoungTableu {
         return [i, j + 1];
       } else {
         --j;
-        for (; j >= 0; --j) {
-          if (toBump >= this.tableau[i][j]) {
+        for (; j >= -1; --j) {
+          if (j == -1 || toBump >= this.tableau[i][j]) {
             let bumpOut = this.tableau[i][j + 1];
             this.tableau[i][j + 1] = toBump;
             toBump = bumpOut;
