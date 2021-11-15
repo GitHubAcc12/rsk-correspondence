@@ -4,6 +4,9 @@ import YoungTableu from "./tableau";
 export default class Application {
   constructor() {
     this.contingencyTable = new ContingencyTable(3, 3);
+  }
+
+  start() {
     this.initializeEventListeners();
   }
 
