@@ -5,42 +5,47 @@
     <link rel="stylesheet" href="./css/stylesheet.css" />
   </head>
   <body>
-    <h1>Robinson-Schenstedt-Knuth Correspondence</h1>
-    <div class="description bottom-padding">
-      Contingency Table to semi-standard Tableau
-    </div>
-    <div class="button-wrapper bottom-padding">
-      <a id="rsk-button" class="custom-btn">RSK</a>
-    </div>
-    <div class="content">
-      <div class="left">
-        <table class="matrix">
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-          <tr>
-            <td>0</td>
-            <td>0</td>
-            <td>0</td>
-          </tr>
-        </table>
+    <div class="wrapper">
+      <h1>Robinson-Schenstedt-Knuth Correspondence</h1>
+      <div class="description bottom-padding">
+        Contingency Table to semi-standard Tableau
       </div>
-      <div class="right description">
-        <h3 class="vis-when-rsk">Tableau P:</h3>
-        <table id="tableauP" class="matrix"></table>
-
-        <h3 class="vis-when-rsk">Tableau Q:</h3>
-        <table id="tableauQ" class="matrix"></table>
+      <div class="button-wrapper bottom-padding">
+        <a id="rsk-button" class="custom-btn">RSK</a>
+      </div>
+      <div class="content">
+        <div class="left">
+          <h3 class="description">Contingency Table</h3>
+          <table class="matrix">
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+          </table>
+        </div>
+        <div class="right description">
+          <div class="left no-overlap">
+            <h3 class="vis-when-rsk">Tableau P:</h3>
+            <table id="tableauP" class="matrix"></table>
+          </div>
+          <div class="right no-overlap">
+            <h3 class="vis-when-rsk">Recording Tableau Q:</h3>
+            <table id="tableauQ" class="matrix"></table>
+          </div>
+        </div>
       </div>
     </div>
-
     <script src="./dist/main.bundle.js"></script>
   </body>
 </html>

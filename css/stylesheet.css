@@ -23,6 +23,10 @@ h1 {
   visibility: hidden;
 }
 
+.no-overlap {
+  margin: 20px;
+}
+
 .custom-btn {
   margin: auto;
   padding: 10px;
