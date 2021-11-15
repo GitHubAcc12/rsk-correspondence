@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "./node_modules/.bin/webpack --watch",
+    "watch": "./node_modules/.bin/webpack --watch --env=dev",
+    "build": "./node_modules/.bin/webpack --env=prod",
     "start": "http-server ."
   },
   "author": "jan",
