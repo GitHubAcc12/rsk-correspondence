@@ -69,6 +69,12 @@ td {
   background: #424242;
 }
 
+.active {
+  margin: 20px;
+  padding: 5px;
+  border: 1px solid cornsilk;
+}
+
 .right {
   width: 49%;
   height: 100%;

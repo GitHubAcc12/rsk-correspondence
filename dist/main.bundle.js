@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _application__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./application */ \"./js/application.js\");\n\nlet app = new _application__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\napp.start();\n\n//# sourceURL=webpack://rsk/./js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _application__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./application */ \"./js/application.js\");\n\nlet navigation = document.getElementsByClassName(\"nav-entry\");\nlet selected = document.getElementsByClassName(\"active\")[0];\nlet app = new _application__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\napp.start(); // index 0: matrix ball\n\nnavigation[0].addEventListener(\"click\", () => {\n  selected.classList.remove(\"active\");\n  navigation[0].classList.add(\"active\");\n  selected = navigation[0]; // start new application for matrix ball\n}); // index 1: CT to PQ\n\nnavigation[1].addEventListener(\"click\", () => {\n  selected.classList.remove(\"active\");\n  navigation[1].classList.add(\"active\");\n  selected = navigation[1]; // start new application for CT to PQ\n});\n\n//# sourceURL=webpack://rsk/./js/index.js?");
 
 /***/ }),
 
