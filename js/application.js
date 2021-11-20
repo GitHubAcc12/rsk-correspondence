@@ -1,5 +1,5 @@
 import ContingencyTable from "./contingencyTable";
-import YoungTableu from "./tableau";
+import computeEmd from "./emd";
 
 export default class Application {
   constructor() {
@@ -8,6 +8,7 @@ export default class Application {
 
   start() {
     this.initializeEventListeners();
+    this.updateRowColSums();
   }
 
   incrementCell(cell, index) {
@@ -33,8 +34,6 @@ export default class Application {
 
   computeRSK() {
     let [P, Q] = this.contingencyTable.semistandardTableauxFromCT();
-    console.log(P);
-    console.log(Q);
 
     let headers = document.getElementsByClassName("vis-when-rsk");
     for (let i = 0; i < headers.length; ++i) {
@@ -53,10 +52,12 @@ export default class Application {
       for (let j = 0; j < P.tableau[i].length; ++j) {
         let tdP = document.createElement("td");
         tdP.innerHTML = P.tableau[i][j];
+        tdP.classList.add("ct");
         trP.appendChild(tdP);
 
         let tdQ = document.createElement("td");
         tdQ.innerHTML = Q.tableau[i][j];
+        tdQ.classList.add("ct");
         trQ.appendChild(tdQ);
       }
       tableP.appendChild(trP);
@@ -75,22 +76,37 @@ export default class Application {
       let index = [row, col];
       items[i].addEventListener("click", () => {
         this.incrementCell(items[i], index);
-        // this.computeRSK();
+        this.computeRSK();
+        this.updateRowColSums();
       });
       items[i].addEventListener("contextmenu", (event) => {
         event.preventDefault();
         this.decrementCell(items[i], index);
-        // this.computeRSK();
+        this.computeRSK();
       });
     }
   }
 
+  updateRowColSums() {
+    const rowSums = this.contingencyTable.computeRowSums();
+    let rowSumsOutput = document.getElementById("row-sums-distr");
+    rowSumsOutput.innerHTML = JSON.stringify(rowSums);
+
+    const colSums = this.contingencyTable.computeColSums();
+    let colSumsOutput = document.getElementById("col-sums-distr");
+    colSumsOutput.innerHTML = JSON.stringify(colSums);
+
+    const emd = computeEmd(rowSums, colSums);
+    let emdOutput = document.getElementById("distr-emd");
+    emdOutput.innerHTML = emd;
+  }
+
   initializeEventListeners() {
     this.addTableIncrementListeners();
-    let btn = document.getElementById("rsk-button");
-    btn.addEventListener("click", () => {
-      this.computeRSK();
-    });
+    // let btn = document.getElementById("rsk-button");
+    // btn.addEventListener("click", () => {
+    //   this.computeRSK();
+    // });
 
     let btnAddRow = document.getElementById("btn-add-row");
     btnAddRow.addEventListener("click", () => {

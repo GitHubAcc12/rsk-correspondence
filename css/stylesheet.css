@@ -47,8 +47,10 @@ h1 {
   margin: auto;
   background: #424242;
 }
-
-td {
+.matrix-wrapper {
+  text-align: center;
+}
+.ct {
   font-size: xx-large;
   padding: 20px;
   border: 1px solid cornsilk;
@@ -72,7 +74,7 @@ td {
 .active {
   margin: 20px;
   padding: 5px;
-  border: 1px solid cornsilk;
+  /* border: 1px solid cornsilk; */
 }
 
 .right {
@@ -95,4 +97,19 @@ td {
   margin-bottom: 20px;
   margin-left: auto;
   margin-right: auto;
+  /* float: left; */
+}
+
+#analysis {
+  /* visibility: hidden; */
+  margin: 20px;
+  text-align: center;
+  align-items: center;
+}
+table {
+  margin: 0 auto;
+}
+td {
+  padding: 10px;
+  font-size: large;
 }
