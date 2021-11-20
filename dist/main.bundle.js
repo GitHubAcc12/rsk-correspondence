@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ computeEmd)\n/* harmony export */ });\nfunction computeEmd(distr1, distr2) {\n  const dif = distr1.map((n, i) => n - distr2[i]);\n  let result = 0;\n\n  for (let i = 1; i < dif.length; ++i) {\n    // sum dif elements up to i\n    let sum0ToI = dif.slice(0, i).reduce((a, b) => a + b);\n    result += Math.abs(sum0ToI);\n  }\n\n  return result;\n}\n\n//# sourceURL=webpack://rsk/./js/emd.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ computeEmd)\n/* harmony export */ });\nfunction computeEmd(distr1, distr2) {\n  if (distr1.length > distr2.length) {\n    makeArraysEqualLength(distr1, distr2);\n  } else if (distr2.length > distr1.length) {\n    makeArraysEqualLength(distr2, distr1);\n  }\n\n  const dif = distr1.map((n, i) => n - distr2[i]);\n  let result = 0;\n\n  for (let i = 1; i < dif.length; ++i) {\n    // sum dif elements up to i\n    let sum0ToI = dif.slice(0, i).reduce((a, b) => a + b);\n    result += Math.abs(sum0ToI);\n  }\n\n  return result;\n}\n\nfunction makeArraysEqualLength(longer, shorter) {\n  for (let i = shorter.length; i < longer.length; ++i) {\n    shorter.push(0);\n  }\n}\n\n//# sourceURL=webpack://rsk/./js/emd.js?");
 
 /***/ }),
 
