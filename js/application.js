@@ -103,10 +103,6 @@ export default class Application {
 
   initializeEventListeners() {
     this.addTableIncrementListeners();
-    // let btn = document.getElementById("rsk-button");
-    // btn.addEventListener("click", () => {
-    //   this.computeRSK();
-    // });
 
     let btnAddRow = document.getElementById("btn-add-row");
     btnAddRow.addEventListener("click", () => {
