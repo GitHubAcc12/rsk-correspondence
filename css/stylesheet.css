@@ -1,8 +1,8 @@
 html,
 body {
   text-align: center;
-  background-color: #424242;
-  color: cornsilk;
+  background-color: #181a1c;
+  color: white;
 }
 
 h1 {
@@ -12,11 +12,11 @@ h1 {
 
 .description {
   font-family: Arial, Helvetica, sans-serif;
-  background: #424242;
+  background: #181a1c;
 }
 
 .bottom-padding {
-  padding-bottom: 5%;
+  padding-bottom: 2%;
 }
 
 .invis-row {
@@ -36,16 +36,16 @@ h1 {
   padding: 10px;
   padding-left: 20px;
   padding-right: 20px;
-  background-image: radial-gradient(ellipse, #787e87 0, #424242);
+  background-image: radial-gradient(ellipse, #787e87 0, #181a1c);
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid cornsilk;
+  border: 1px solid white;
 }
 
 .matrix {
   font-family: Arial, Helvetica, sans-serif;
   margin: auto;
-  background: #424242;
+  background: #181a1c;
 }
 .matrix-wrapper {
   text-align: center;
@@ -53,13 +53,13 @@ h1 {
 .ct {
   font-size: xx-large;
   padding: 20px;
-  border: 1px solid cornsilk;
-  background: #424242;
+  border: 1px solid white;
+  background: #181a1c;
 }
 
 .addRow,
 .addCol {
-  border: 1px solid cornsilk;
+  border: 1px solid white;
   margin: 10px;
 }
 
@@ -68,7 +68,7 @@ h1 {
   float: left;
   height: 100%;
   text-align: center;
-  background: #424242;
+  background: #181a1c;
 }
 
 .active {
@@ -82,12 +82,12 @@ h1 {
   height: 100%;
   float: right;
   text-align: center;
-  background: #424242;
+  background: #181a1c;
 }
 
 .content {
   overflow: auto;
-  background: #424242;
+  background: #181a1c;
   position: relative;
   height: 100%;
 }
