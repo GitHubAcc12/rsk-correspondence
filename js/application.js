@@ -11,13 +11,25 @@ export default class Application {
     this.updateRowColSums();
   }
 
+  hideTableauxHeaders() {
+    let headers = document.getElementsByClassName("vis-when-rsk");
+    for (let i = 0; i < headers.length; ++i) {
+      headers[i].style.visibility = "hidden";
+    }
+  }
+  showTableauxHeaders() {
+    let headers = document.getElementsByClassName("vis-when-rsk");
+    for (let i = 0; i < headers.length; ++i) {
+      headers[i].style.visibility = "visible";
+    }
+  }
+
   incrementCell(cell, index) {
     let val = parseInt(cell.innerHTML);
     cell.innerHTML = val + 1;
     let i = index[0];
     let j = index[1];
     this.contingencyTable.increment(i, j);
-    // this.contingencyTable.printTable();
   }
 
   decrementCell(cell, index) {
@@ -32,12 +44,15 @@ export default class Application {
     }
   }
 
-  computeRSK() {
+  computeRSKAndAppendHtmlToSite() {
     let [P, Q] = this.contingencyTable.semistandardTableauxFromCT();
 
-    let headers = document.getElementsByClassName("vis-when-rsk");
-    for (let i = 0; i < headers.length; ++i) {
-      headers[i].style.visibility = "visible";
+    // make sure headers are only shown if Tableaux aren't empty
+    console.log(P.shape);
+    if (P.shape.length === 0) {
+      this.hideTableauxHeaders();
+    } else {
+      this.showTableauxHeaders();
     }
 
     let tableP = document.getElementById("tableauP");
@@ -67,22 +82,23 @@ export default class Application {
 
   addTableIncrementListeners() {
     let items = document.getElementsByClassName("ct");
+    let cols = this.contingencyTable.columns;
     for (let i = 0; i < items.length; ++i) {
       // compute row and column number from i
-      let cols = this.contingencyTable.columns;
 
       let row = Math.floor(i / cols);
       let col = i % cols;
       let index = [row, col];
       items[i].addEventListener("click", () => {
         this.incrementCell(items[i], index);
-        this.computeRSK();
+        this.computeRSKAndAppendHtmlToSite();
         this.updateRowColSums();
       });
       items[i].addEventListener("contextmenu", (event) => {
         event.preventDefault();
         this.decrementCell(items[i], index);
-        this.computeRSK();
+        this.computeRSKAndAppendHtmlToSite();
+        this.updateRowColSums();
       });
     }
   }
