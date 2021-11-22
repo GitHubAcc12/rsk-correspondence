@@ -1,20 +1,29 @@
 export default class YoungTableu {
   constructor(shape = [], content = []) {
     this.shape = shape;
+
+    // content: (u1, u2, u3, ...) where ui is the number of i's in tableau
     this.content = content;
     this.tableau = [[]];
   }
 
   rowBump(val) {
-    this.content.push(val);
+    // adjust content
+    while (this.content.length <= val) {
+      this.content.push(0);
+    }
+    ++this.content[val];
+
     if (this.tableau[0].length == 0) {
       this.tableau[0].push(val);
+      this.shape.push(1);
       return [0, 0];
     }
 
     let pos = this.tableau[0].length - 1;
     if (this.tableau[0][pos] <= val) {
       this.tableau[0].push(val);
+      ++this.shape[0];
       return [0, pos + 1];
     }
 
